@@ -90,6 +90,8 @@ typedef struct WOLFSSL_BN_GENCB    WOLFSSL_BN_GENCB;
 WOLFSSL_API WOLFSSL_BN_CTX* wolfSSL_BN_CTX_new(void);
 WOLFSSL_API void           wolfSSL_BN_CTX_free(WOLFSSL_BN_CTX* ctx);
 
+WOLFSSL_API void wolfSSL_BN_CTX_end(WOLFSSL_BN_CTX *ctx);
+
 WOLFSSL_API WOLFSSL_BIGNUM* wolfSSL_BN_new(void);
 #if !defined(USE_INTEGER_HEAP_MATH) && !defined(HAVE_WOLF_BIGINT)
 WOLFSSL_API void           wolfSSL_BN_init(WOLFSSL_BIGNUM* bn);
@@ -294,6 +296,8 @@ typedef WOLFSSL_BN_GENCB    BN_GENCB;
 
 #define BN_CTX_get wolfSSL_BN_CTX_get
 #define BN_CTX_start wolfSSL_BN_CTX_start
+
+#define BN_CTX_end  wolfSSL_BN_CTX_end
 
 #define BN_mod_inverse wolfSSL_BN_mod_inverse
 
