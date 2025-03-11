@@ -36,10 +36,41 @@ task.h is included from an application file. */
 int EccKeyParamCopySize(char **dst, char *src, int Sz);
 #endif
 
+// void wolfSSL_BN_CTX_free(WOLFSSL_BN_CTX* ctx)
+// {
+//     WOLFSSL_ENTER("wolfSSL_BN_CTX_free");
+//     if (ctx != NULL) {
+//         while (ctx->list != NULL) {
+//             struct WOLFSSL_BN_CTX_LIST* tmp = ctx->list;
+//             ctx->list = ctx->list->next;
+//             wolfSSL_BN_free(tmp->bn);
+//             XFREE(tmp, NULL, DYNAMIC_TYPE_OPENSSL);
+//         }
+//         XFREE(ctx, NULL, DYNAMIC_TYPE_OPENSSL);
+//     }
+// }
+
 /* WOLFSSL_SUCCESS on ok */
 void wolfSSL_BN_CTX_end(WOLFSSL_BN_CTX *ctx)
 {
-    wolfSSL_BN_CTX_free(ctx);
+    // wolfSSL_BN_CTX_free(ctx);
+
+    WOLFSSL_ENTER("wolfSSL_BN_CTX_end");
+    //debug
+    uint32_t cnt = 2;
+    if (ctx != NULL) {
+        while (ctx->list != NULL && cnt > 0) {
+            struct WOLFSSL_BN_CTX_LIST* tmp = ctx->list;
+            ctx->list = ctx->list->next;
+            wolfSSL_BN_free(tmp->bn);
+            XFREE(tmp, NULL, DYNAMIC_TYPE_OPENSSL);
+            cnt--;
+        }
+        // XFREE(ctx, NULL, DYNAMIC_TYPE_OPENSSL);
+    }
+    // (void)ctx;
+    // WC_DO_NOTHING;
+    return;
 }
 
 #ifdef WOLFSSL_CUSTOM_CURVES
