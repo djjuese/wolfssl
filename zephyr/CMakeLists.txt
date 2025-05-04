@@ -17,6 +17,8 @@ if(CONFIG_WOLFSSL)
         ${ZEPHYR_CURRENT_MODULE_DIR}/wolfssl
         ${ZEPHYR_CURRENT_MODULE_DIR}/zephyr
         )
+    
+    target_compile_options(wolfSSL INTERFACE -w)
 
     zephyr_library()
     zephyr_library_sources(${ZEPHYR_CURRENT_MODULE_DIR}/zephyr/zephyr_init.c)
