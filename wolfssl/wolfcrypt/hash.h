@@ -65,6 +65,9 @@
 #endif
 
 #if !defined(HAVE_FIPS) && !defined(NO_OLD_WC_NAMES)
+    #ifdef MAX_DIGEST_SIZE
+        #undef  MAX_DIGEST_SIZE
+    #endif
     #define MAX_DIGEST_SIZE WC_MAX_DIGEST_SIZE
 #endif
 

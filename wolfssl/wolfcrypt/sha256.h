@@ -114,7 +114,13 @@
 
 #ifndef NO_OLD_WC_NAMES
     #define Sha256             wc_Sha256
+    #ifdef SHA256_BLOCK_SIZE
+        #undef  SHA256_BLOCK_SIZE
+    #endif
     #define SHA256_BLOCK_SIZE  WC_SHA256_BLOCK_SIZE
+    #ifdef SHA256_DIGEST_SIZE
+        #undef  SHA256_DIGEST_SIZE
+    #endif
     #define SHA256_DIGEST_SIZE WC_SHA256_DIGEST_SIZE
     #define SHA256_PAD_SIZE    WC_SHA256_PAD_SIZE
 #endif

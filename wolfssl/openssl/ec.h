@@ -370,13 +370,13 @@ int wolfSSL_EC_POINTs_mul(const WOLFSSL_EC_GROUP *group, WOLFSSL_EC_POINT *r,
                           const WOLFSSL_EC_POINT *p[], const WOLFSSL_BIGNUM *m[],
                           WOLFSSL_BN_CTX *ctx);
 
-WOLFSSL_API
-WOLFSSL_EC_GROUP *wolfSSL_EC_GROUP_new_curve_GFp(const WOLFSSL_BIGNUM *p, const WOLFSSL_BIGNUM *a,
-                                 const WOLFSSL_BIGNUM *b, BN_CTX *ctx);
+// WOLFSSL_API
+// WOLFSSL_EC_GROUP *wolfSSL_EC_GROUP_new_curve_GFp(const WOLFSSL_BIGNUM *p, const WOLFSSL_BIGNUM *a,
+//                                  const WOLFSSL_BIGNUM *b, BN_CTX *ctx);
 
-WOLFSSL_API
-int wolfSSL_EC_GROUP_set_generator(WOLFSSL_EC_GROUP *group, const WOLFSSL_EC_POINT *generator,
-                           const WOLFSSL_BIGNUM *order, const WOLFSSL_BIGNUM *cofactor);
+// WOLFSSL_API
+// int wolfSSL_EC_GROUP_set_generator(WOLFSSL_EC_GROUP *group, const WOLFSSL_EC_POINT *generator,
+//                            const WOLFSSL_BIGNUM *order, const WOLFSSL_BIGNUM *cofactor);
 
 WOLFSSL_API
 int wolfSSL_EC_POINT_invert(const WOLFSSL_EC_GROUP *group, WOLFSSL_EC_POINT *a,
@@ -487,8 +487,8 @@ typedef WOLFSSL_EC_KEY_METHOD         EC_KEY_METHOD;
 #define EC_POINT_add                    wolfSSL_EC_POINT_add
 #define EC_POINT_mul                    wolfSSL_EC_POINT_mul
 #define EC_POINTs_mul                   wolfSSL_EC_POINTs_mul
-#define EC_GROUP_new_curve_GFp          wolfSSL_EC_GROUP_new_curve_GFp
-#define EC_GROUP_set_generator          wolfSSL_EC_GROUP_set_generator
+// #define EC_GROUP_new_curve_GFp          wolfSSL_EC_GROUP_new_curve_GFp
+// #define EC_GROUP_set_generator          wolfSSL_EC_GROUP_set_generator
 #define EC_POINT_invert                 wolfSSL_EC_POINT_invert
 #define EC_POINT_clear_free             wolfSSL_EC_POINT_clear_free
 #define EC_POINT_cmp                    wolfSSL_EC_POINT_cmp

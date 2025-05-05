@@ -95,10 +95,19 @@ enum {
     #define SHA3_224             WC_SHA3_224
     #define SHA3_224_DIGEST_SIZE WC_SHA3_224_DIGEST_SIZE
     #define SHA3_256             WC_SHA3_256
+    #ifdef SHA3_256_DIGEST_SIZE
+        #undef  SHA3_256_DIGEST_SIZE
+    #endif
     #define SHA3_256_DIGEST_SIZE WC_SHA3_256_DIGEST_SIZE
     #define SHA3_384             WC_SHA3_384
+    #ifdef SHA3_384_DIGEST_SIZE
+        #undef  SHA3_384_DIGEST_SIZE
+    #endif
     #define SHA3_384_DIGEST_SIZE WC_SHA3_384_DIGEST_SIZE
     #define SHA3_512             WC_SHA3_512
+    #ifdef SHA3_512_DIGEST_SIZE
+        #undef  SHA3_512_DIGEST_SIZE
+    #endif
     #define SHA3_512_DIGEST_SIZE WC_SHA3_512_DIGEST_SIZE
     #define Sha3 wc_Sha3
     #ifdef WOLFSSL_SHAKE128
